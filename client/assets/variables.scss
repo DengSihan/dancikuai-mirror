@@ -1,0 +1,35 @@
+:root{
+	--scoll-width: 10px;
+	--default-border-width: 2px;
+	--thin-border-with: 1.2px;
+	--border: var(--default-border-width) solid rgba(var(--vs-gray-4), .5);
+	--thin-border: var(--thin-border-with) solid rgba(var(--vs-gray-2), .1);
+	--nav-header-height: 4.5rem;
+	--time-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
+
+
+	// default familiarity color
+	--familiarity-0: 120, 144, 157;
+
+	--familiarity-50: 87, 230, 186;
+	--familiarity-100: 29, 207, 153;
+	--familiarity-150: 20, 210, 107;
+	--familiarity-200: 15, 167, 85;
+
+	--familiarity-250: 68, 206, 246;
+	--familiarity-300: 37, 167, 245;
+	--familiarity-350: 32, 125, 255;
+	--familiarity-400: 25, 100, 205;
+
+	--familiarity-450: 204, 153, 249;
+	--familiarity-500: 193, 99, 239;
+	--familiarity-550: 203, 34, 215;
+	--familiarity-600: 163, 27, 172;
+
+	--familiarity-650: 255, 144, 144;
+	--familiarity-700: 255, 71, 119;
+	--familiarity-750: 255, 87, 34;
+
+	--familiarity-800: 255, 162, 58;
+}

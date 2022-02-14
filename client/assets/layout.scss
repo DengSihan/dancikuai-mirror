@@ -1,0 +1,132 @@
+$hamburger-layer-color: rgba(var(--vs-text), 1);
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+@import '~hamburgers/_sass/hamburgers/hamburgers';
+
+$nav-item-nb: 6;
+
+#__layout{
+
+    --close-button-container-height: 4rem;
+    --userinfo-container-height: 8rem;
+    --sidebar-footer-height: 3rem;
+
+    position: relative;
+
+    &>aside{
+        right: 100vw;
+        z-index: 3;
+            background-color: rgba(var(--vs-background), 1);
+            transition: right .5s var(--time-function),
+                    left .5s var(--time-function);
+        &.active{
+            right: 0;
+        }
+        &>header{
+            height: var(--close-button-container-height);
+        }
+        &>section{
+            height: var(--userinfo-container-height);
+        }
+        &>footer{
+            height: var(--sidebar-footer-height);
+        }
+        &>nav{
+            height: calc(100vh - var(--close-button-container-height) - var(--userinfo-container-height) - var(--default-border-width) - var(--sidebar-footer-height));
+            li.sidebar-item-sub-link{
+                height: 48px;
+                &>a{
+                    transition: background-color .2s var(--time-function);
+                    &:hover{
+                        background-color: rgba(var(--vs-gray-4), 1);
+                    }
+                }
+            }
+        }
+
+        &.active>nav>ul>li{
+            transform: translateX(0%);
+        }
+        &>nav>ul>li{
+            transform: translateX(-100%);
+            transition: transform .5s;
+            transition-timing-function: var(--time-function);
+            @for $i from 1 through $nav-item-nb {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{35 + (35 * $i)}ms;
+                }   
+            }
+        }
+    }
+
+    &>main{
+        transition: margin-left .5s var(--time-function),
+            width .5s var(--time-function);
+        &>header{
+            z-index: 10;
+            background-color: rgba(var(--vs-gray-1), 1);
+            transition: width .5s var(--time-function);
+            height: var(--nav-header-height);
+            top: 0px;
+            transition: top .5s var(--time-function);
+            &.hide{
+                top: calc(-1 * calc(var(--nav-header-height) + var(--default-border-width)));
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    #__layout{
+        &>aside{
+            right: 100vw;
+            &.active{
+                right: 0;
+            }
+            &>nav{
+                height: calc(100vh - var(--close-button-container-height) - var(--userinfo-container-height) - var(--default-border-width) - var(--sidebar-footer-height));
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    #__layout{
+        &>aside{
+            right: 100vw;
+            width: 50vw;
+            &.active{
+                right: 50vw;
+                & ~ main{
+                    filter: blur(3px);
+                }
+            }
+            &>nav{
+                height: calc(100vh - var(--close-button-container-height) - var(--userinfo-container-height) - var(--default-border-width) - var(--sidebar-footer-height));
+            }
+        }
+    }
+}
+@media (min-width: 1024px) {
+    #__layout{
+        position: relative;
+        &>aside{
+            left: -300px;
+            width: 300px;
+            &.active{
+                left: 0px;
+                & ~ main{
+                    width: calc(100vw - 300px - var(--scoll-width));
+                    margin-left: 300px;
+                    filter: none;
+                }
+            }
+            &>nav{
+                height: calc(100vh - var(--userinfo-container-height) - var(--default-border-width) - var(--sidebar-footer-height));
+            }
+        }
+        &>main{
+            width: calc(100vw - var(--scoll-width));
+            margin-left: 0px;
+        }
+    }
+}

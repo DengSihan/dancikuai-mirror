@@ -1,0 +1,15 @@
+button.activeable{
+    transform: scale(1);
+    transition: transform .2s var(--time-function);
+    &:active{
+        transform: scale(0.9);
+    }
+}
+
+i.mdi.mdi-chevron-down{
+    font-size: 1.5rem;
+    transition: transform .2s var(--time-function);
+    &.open{
+        transform: rotate(180deg)
+    }
+}

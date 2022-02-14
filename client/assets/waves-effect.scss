@@ -1,0 +1,53 @@
+// for waves-effect
+.waves-effect{
+    position:relative;
+    overflow:hidden;
+    -webkit-tap-highlight-color:transparent;
+}
+.waves-effect .waves-ripple{
+    position:absolute;
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    margin-top:-50px;
+    margin-left:-50px;
+    opacity:0;
+    background:rgba(255,255,255,.2);
+    background:radial-gradient(rgba(255,255,255,.2) 0,rgba(255,255,255,.3) 40%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.5) 60%,hsla(0,0%,100%,0) 70%);
+    transition:all .5s ease-out;
+    transition-property:transform,opacity;
+    transform:scale(0) translate(0);
+    pointer-events:none;
+}
+.waves-effect.waves-light .waves-ripple{
+    background:hsla(0,0%,100%,.4);
+    background:radial-gradient(hsla(0,0%,100%,.2) 0,hsla(0,0%,100%,.3) 40%,hsla(0,0%,100%,.4) 50%,hsla(0,0%,100%,.5) 60%,hsla(0,0%,100%,0) 70%);
+
+}
+.waves-effect.waves-classic .waves-ripple{
+    background:rgba(255,255,255,.2);
+}
+.waves-effect.waves-classic.waves-light .waves-ripple{
+    background:hsla(0,0%,100%,.4);
+}
+.waves-notransition{
+    transition:none!important;
+}
+.waves-button,.waves-circle{
+    transform:translateZ(0);
+    -webkit-mask-image:-webkit-radial-gradient(circle,#fff 100%,#000 0);
+}
+.waves-button,.waves-button-input,.waves-button:hover,.waves-button:visited{
+    white-space:nowrap;
+    vertical-align:middle;
+    cursor:pointer;
+    border:none;
+    outline:none;
+    color:inherit;
+    background-color:transparent;
+    font-size:1em;
+    line-height:1em;
+    text-align:center;
+    text-decoration:none;
+    z-index:1;
+}

@@ -1,0 +1,44 @@
+*{
+	font-family: 'Poppins','Noto Sans SC','Noto Sans TC','Noto Sans JP',sans-serif;
+}
+
+html{
+    overflow-y: scroll;
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(var(--vs-background), .9);
+    color: rgba(var(--vs-text), 1);
+}
+
+a{
+    color: inherit;
+}
+
+.nuxt-progress{
+    background-color: rgba(var(--vs-text), 1) !important;
+    height: 3px !important; 
+}
+
+button:not(.vs-button){
+	color: rgba(var(--vs-text), 1);
+}
+
+/* width */
+::-webkit-scrollbar{
+    width: var(--scoll-width);
+}
+/* Track */
+::-webkit-scrollbar-track{
+    background: rgba(var(--vs-gray-4), 1);
+}
+/* Handle */
+::-webkit-scrollbar-thumb{
+    background: rgba(var(--vs-text), .8);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+    background: rgba(var(--vs-text), 1);
+} 

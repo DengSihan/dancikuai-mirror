@@ -1,0 +1,61 @@
+table:not(.default){
+
+	--table-border: var(--default-border-width) solid rgba(var(--vs-gray-4), .8);
+
+	border-top: var(--table-border);
+	border-collapse: collapse;
+
+	overflow: hidden;
+	width: 100%;
+
+	td, th {
+		position: relative;
+		outline: 0;
+		padding: .75rem;
+		text-align: center;
+	}
+
+	tr{	
+		border-bottom: var(--table-border);
+	}
+	
+	tbody tr:hover {
+  		background-color: rgba(var(--vs-gray-3), .6);
+	}
+
+	td:hover::after,
+	thead th:not(:empty):hover::after,
+	td:focus::after,
+	thead th:not(:empty):focus::after { 
+		content: '';  
+		height: 10000px;
+		left: 0;
+		position: absolute;  
+		top: -5000px;
+		width: 100%;
+		z-index: -1;
+	}
+
+	td:hover::after,
+	th:hover::after {
+  		background-color: rgba(var(--vs-gray-3), .6);
+	}
+
+	td:focus::after,
+	th:focus::after {
+		background-color: rgba(var(--vs-gray-3), .6);
+	}
+
+	/* Focus stuff for mobile */
+	td:focus::before,
+	tbody th:focus::before {
+		background-color: rgba(var(--vs-gray-3), .6);
+		content: '';  
+		height: 100%;
+		top: 0;
+		left: -5000px;
+		position: absolute;  
+		width: 10000px;
+		z-index: -1;
+	}
+}
